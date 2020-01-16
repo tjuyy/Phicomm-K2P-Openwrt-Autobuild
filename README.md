@@ -8,10 +8,16 @@
   <a target="_blank" href="LICENSE" title="License: MIT"><img src="https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE"></a>
   <a target="_blank" href="https://github.com/tjuyy/Phicomm-K2P-Openwrt-Autobuild/stargazers" title="Stars"><img src="https://img.shields.io/github/stars/tjuyy/Phicomm-K2P-Openwrt-Autobuild.svg?style=flat-square&label=Stars"></a>
   <a target="_blank" href="https://github.com/tjuyy/Phicomm-K2P-Openwrt-Autobuild/fork" title="Forks"><img src="https://img.shields.io/github/forks/tjuyy/Phicomm-K2P-Openwrt-Autobuild.svg?style=flat-square&label=Forks"></a>
+  <br>
+  <a target="_blank" href="https://github.com/tjuyy/Phicomm-K2P-Openwrt-Autobuild/actions" title="GitHub Actions Workflow Status"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/tjuyy/Phicomm-K2P-Openwrt-Autobuild/Build%20OpenWrt%20for%20K2P?style=for-the-badge"></a>
 </p>
 
 <p align="center">
   <a href="#usage">Usage</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#info">Info</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#features">Features</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#acknowledgments">Acknowledgments</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -29,6 +35,26 @@
 ## Info
 
 - gateway: 192.168.1.1
+
+## Features
+
+### Network
+- IPv6
+- NAT6
+- Shadowsocks
+- V2Ray
+- Trojan
+
+### Tools
+- htop
+- curl
+- wget
+- iperf3
+- tcpdump
+- luci-app-commands
+- luci-app-ttyd
+- luci-app-webadmin
+- luci-app-wrtbwmon
 
 ## Acknowledgments
 
