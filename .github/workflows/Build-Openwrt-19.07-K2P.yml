@@ -43,7 +43,7 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
           sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-     - name: Clone Openwrt source code
+      - name: Clone Openwrt source code
         env:
           REPO_URL: https://github.com/openwrt/openwrt
           REPO_BRANCH: openwrt-19.07
