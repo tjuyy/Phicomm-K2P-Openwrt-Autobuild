@@ -82,21 +82,24 @@ jobs:
           cd openwrt && make download -j8
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
+
       - name: Multi-thread compile
         run: |
           cd openwrt
           echo -e "$(nproc) thread compile"
           make -j$(nproc)
+
       - name: Single-thread compile
         if: failure()
         run: |
           cd openwrt
           make -j1 V=s
+
       - name: Upload bin directory
         uses: actions/upload-artifact@master
         if: always()
         with:
-          name: OpenWrt_K2P_bin
+          name: OpenWrt-19.07_K2P_bin
           path: openwrt/bin
 
       - name: Remove packages
@@ -105,17 +108,10 @@ jobs:
           cd openwrt/bin/targets/*/*
           rm -rf packages
           echo "::set-env name=FIRMWARE::$(pwd)"
+
       - name: Upload firmware to Artifact
         uses: actions/upload-artifact@master
         if: always()
         with:
-          name: OpenWrt-K2P-Firmware
+          name: OpenWrt-19.07-K2P-Firmware
           path: ${{ env.FIRMWARE }}
-
-      - name: Publish release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: openwrt/bin/targets/ramips/mt7621/*
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASES_DEPLOY_TOKEN }}
