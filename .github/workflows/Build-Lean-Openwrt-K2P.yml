@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@main
 
       - name: Initialization environment
         env:
@@ -91,7 +91,7 @@ jobs:
           make -j1 V=s
 
       - name: Upload bin directory
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         if: always()
         with:
           name: OpenWrt_K2P_bin
@@ -105,7 +105,7 @@ jobs:
           echo "::set-env name=FIRMWARE::$(pwd)"
 
       - name: Upload firmware to Artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         if: always()
         with:
           name: OpenWrt-K2P-Firmware
