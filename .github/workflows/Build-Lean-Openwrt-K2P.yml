@@ -17,6 +17,10 @@ on:
     - cron: 0 0 * * 1
   watch:
     types: [started]
+  workflow_dispatch:
+    inputs:
+      logs:
+        description: 'You can input logs here'  
 
 jobs:
   build:
