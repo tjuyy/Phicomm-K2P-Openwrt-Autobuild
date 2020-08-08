@@ -1,6 +1,6 @@
 <p align=center>
   <br>
-  <span>Phicomm K2P Openwrt Autobuild | 斐讯 K2P Openwrt 自动编译</span>
+  <span>Phicomm K2P Openwrt Autobuild | 斐讯 K2P Openwrt 自动编译（每周一早8点）</span>
   <br>
   <span>Customize your own OpenWrt firmware for Phicomm K2P using Github Actions.</span>
   <br>
@@ -27,10 +27,21 @@
 
 ## Usage
 
-1. Fork [this repository](https://github.com/tjuyy/Phicomm-K2P-Openwrt-Autobuild)
-2. Click the `Star` button of your own forked repository or `Create a new release` in your forked repository 
-3. Github Actions workflow will be triggered and run automaticlly
-4. Wait completion of the workflow and download files from `Aritifact`
+1. Star and Fork [this repository](https://github.com/tjuyy/Phicomm-K2P-Openwrt-Autobuild)
+2. Click the `Action` button of your own forked repository
+3. Click the `Build Lean's OpenWrt for K2P` under all workflows
+4. Click the `Run workflow` button on the right, you can input some logs here (optional)
+5. Github Actions workflow will be triggered and run automaticlly
+6. Wait completion of the workflow and download files from `Aritifact`
+
+## 使用方法（简体中文）
+
+1. Star and Fork [this repository](https://github.com/tjuyy/Phicomm-K2P-Openwrt-Autobuild)
+2. 在你的forked repo中，点击上方的 `Action` 按钮 
+3. 点击左侧的all workflows下方的 `Build Lean's OpenWrt for K2P`
+4. 点击右侧的 `Run workflow` 按钮，这里可以输入一些日志 (可选的)
+5. Github Actions workflow 会被触发并自动运行编译
+6. 等待workflow工作完成，从 `Aritifact`中下载生成的文件
 
 ## Info
 
