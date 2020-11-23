@@ -106,7 +106,7 @@ jobs:
         run: |
           cd openwrt/bin/targets/*/*
           rm -rf packages
-          echo "::set-env name=FIRMWARE::$(pwd)"
+          echo "FIRMWARE=$(pwd)" >> $GITHUB_ENV
 
       - name: Upload firmware to Artifact
         uses: actions/upload-artifact@main
