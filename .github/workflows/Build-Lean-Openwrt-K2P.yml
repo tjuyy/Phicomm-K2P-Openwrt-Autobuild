@@ -34,6 +34,7 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
+          echo "Date_and_RunNumber=$(date -u +'%Y-%m-%d')-#$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
           echo "Deleting files, please wait ..."
           sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d/*
           #sudo swapoff /swapfile
@@ -98,7 +99,7 @@ jobs:
         uses: actions/upload-artifact@main
         if: always()
         with:
-          name: OpenWrt_K2P_bin
+          name: OpenWrt_K2P_bin-${{ env.Date_and_RunNumber }}
           path: openwrt/bin
 
       - name: Remove packages
@@ -106,14 +107,15 @@ jobs:
         run: |
           cd openwrt/bin/targets/*/*
           rm -rf packages
-          echo "FIRMWARE=$(pwd)" >> $GITHUB_ENV
-
+          echo "Firmware_path=$(pwd)" >> $GITHUB_ENV
+          
+          
       - name: Upload firmware to Artifact
         uses: actions/upload-artifact@main
         if: always()
         with:
-          name: OpenWrt-K2P-Firmware
-          path: ${{ env.FIRMWARE }}
+          name: OpenWrt-K2P-Firmware-${{ env.Date_and_RunNumber }}
+          path: ${{ env.Firmware_path }}
 
       - name: Publish release
         uses: softprops/action-gh-release@v1
