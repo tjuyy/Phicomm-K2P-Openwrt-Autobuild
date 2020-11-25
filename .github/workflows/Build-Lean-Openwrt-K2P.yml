@@ -87,7 +87,7 @@ jobs:
         run: |
           cd openwrt
           echo -e "$(($(nproc)+1)) thread compile"
-          make -j$$(($(nproc)+1))
+          make -j$(($(nproc)+1))
 
       - name: Single-thread compile
         if: failure()
