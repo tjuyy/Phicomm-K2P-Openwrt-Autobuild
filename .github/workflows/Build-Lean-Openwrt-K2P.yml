@@ -79,15 +79,15 @@ jobs:
 
       - name: Download package
         run: |
-          cd openwrt && make download -j8
+          cd openwrt && make download -j$(($(nproc)+1))
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
 
       - name: Multi-thread compile
         run: |
           cd openwrt
-          echo -e "$(nproc) thread compile"
-          make -j$(nproc)
+          echo -e "$(($(nproc)+1)) thread compile"
+          make -j$$(($(nproc)+1))
 
       - name: Single-thread compile
         if: failure()
