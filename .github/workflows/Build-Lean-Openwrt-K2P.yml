@@ -71,6 +71,8 @@ jobs:
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
           chmod +x $DIY_SH
           cd openwrt
+          echo 'CONFIG_KERNEL_BUILD_USER="tjuyy"' >> ./.config
+          echo "CONFIG_GRUB_TITLE=\"OpenWrt AutoBuild by tjuyy-$Date_and_RunNumber\"" >> ./.config
           ../$DIY_SH
           make defconfig
 
