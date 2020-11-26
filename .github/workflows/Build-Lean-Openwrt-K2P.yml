@@ -73,6 +73,7 @@ jobs:
           cd openwrt
           echo 'CONFIG_KERNEL_BUILD_USER="tjuyy"' >> ./.config
           echo "CONFIG_GRUB_TITLE=\"OpenWrt AutoBuild by tjuyy-$Date_and_RunNumber\"" >> ./.config
+          echo "OpenWrt AutoBuild by tjuyy - $Date_and_RunNumber" >> package/base-files/files/etc/banner
           ../$DIY_SH
           make defconfig
 
