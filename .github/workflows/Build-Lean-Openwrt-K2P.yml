@@ -57,7 +57,8 @@ jobs:
       - name: add custom source
         run: |
           cd openwrt
-          sed -i '/helloworld/s/^#//g' feeds.conf.default
+          sed -i "/helloworld/d" "feeds.conf.default"
+          echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
 
       - name: Update & install feeds
         run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
