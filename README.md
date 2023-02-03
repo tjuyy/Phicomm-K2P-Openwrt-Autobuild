@@ -52,9 +52,11 @@
 ### Network
 - IPv6
 - NAT6
+- Zerotier
 - Shadowsocks
-- V2Ray
+- NaiveProxy
 - Trojan
+
 
 ### Tools
 - htop
